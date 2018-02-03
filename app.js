@@ -35,14 +35,13 @@ var hashtag = "";
 
 function grabTweets() {
   var randomInt = getRandomInt(0, hashtagArray.length - 1);
-  var hashtag = hashtagArray[randomInt].q;
+  hashtag = hashtagArray[randomInt].q;
   T.get("search/tweets", hashtagArray[randomInt], function (
     err,
     data,
     response
   ) {
     var tweetArray = data.statuses;
-    var textResultArray = [];
 
     //loops until either it finds 4 valid results or reaches end of the tweet array
     for (i = 0; textResultArray.length != 4 && i < tweetArray.length; i++) {
@@ -59,6 +58,7 @@ function grabTweets() {
     }
 
     var result = { result: textResultArray, hashtag: hashtag };
+    console.log(result);
     // !!!!! then pass result to web page somehow !!!!!
   });
 }
