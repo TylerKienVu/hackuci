@@ -16,14 +16,6 @@ var T = new Twit({
   timeout_ms: 60 * 1000 // optional HTTP request timeout to apply to all requests.
 });
 
-// <<<<<<< HEAD
-var query = { q: "#banana ", count: 4 };
-
-T.get("search/tweets", query, function (err, data, response) {
-  // console.log(data.statuses[0].text);
-  console.log(data);
-});
-
 /*------------Core Function------------*/
 
 /*Helper-Functions*/
@@ -66,52 +58,12 @@ function grabTweets() {
       console.log("Didn't get 4 valid results..");
     }
 
-    // console.log(textResultArray);
-    // console.log(hashtag);
-    // console.log(result);
     var result = { result: textResultArray, hashtag: hashtag };
-    // !!!!! then pass result to web page somehow !!!!!
-  });
-
-  textResultArray = [];
-  var randomInt = getRandomInt(0, hashtagArray.length - 1);
-  hashtag = hashtagArray[randomInt].q;
-  T.get("search/tweets", hashtagArray[randomInt], function (
-    err,
-    data,
-    response
-  ) {
-    var tweetArray = data.statuses;
-
-    //loops until either it finds 4 valid results or reaches end of the tweet array
-    for (i = 0; textResultArray.length != 4 && i < tweetArray.length; i++) {
-      // console.log("Tweet[" + i + "] : " + tweetArray[i].text);
-
-      var re = new RegExp("/http\S+/");
-      if (tweetArray[i].lang == "en") {
-        if (tweetArray[i].text.search(hashtag) != -1) {
-          var removehash = tweetArray[i].text.replace(hashtag, "#GUESS-THE-HASHTAG");
-          var removelink = removehash.replace(re, 'Something');
-          textResultArray.push(removelink);
-        }
-      }
-    }
-
-    if (textResultArray.length != 4) {
-      console.log("Didn't get 4 valid results..");
-    }
-
-    console.log(textResultArray);
-    console.log(hashtag);
-    // console.log(result);
     // !!!!! then pass result to web page somehow !!!!!
   });
 }
 
 grabTweets();
-
-/*------------------------------------*/
-// >>>>>>> 00344489c43ac66b51a77027f6863cf1a420dfc3
 
 app.get("/", function (req, res) {
   res.render("pages/index", {
