@@ -11,6 +11,11 @@
 	<main>
 		<div>
 			<h2>This is the main content</h2>
+			<ul>
+				<% results.forEach(function(result) { %>
+					<li><%= result %></li>
+				<% }); %>
+			</ul>
 		</div>
 	</main>
 

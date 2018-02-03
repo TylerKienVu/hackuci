@@ -29,9 +29,13 @@ function getRandomInt(min, max) {
 var hashtagArray = [{ q: "#banana", count: 100},{ q: "#apple", count: 100},
 { q: "#orange", count: 100},{ q: "#peach", count: 100}];
 
+var textResultArray = [];
+var hashtag = ""
+
 function grabTweets() {
+	textResultArray = [];
 	var randomInt = getRandomInt(0,hashtagArray.length-1);
-	var hashtag = hashtagArray[randomInt].q;
+	hashtag = hashtagArray[randomInt].q;
 	T.get("search/tweets", hashtagArray[randomInt], function(
 	  err,
 	  data,
@@ -39,7 +43,6 @@ function grabTweets() {
 	) 
 	{	  
 	  var tweetArray = data.statuses;
-	  var textResultArray  = [];
 
 	  //loops until either it finds 4 valid results or reaches end of the tweet array
 	  for (i=0; textResultArray.length != 4 && i < tweetArray.length; i++) {
@@ -54,19 +57,22 @@ function grabTweets() {
 	  	console.log("Didn't get 4 valid results..");
 	  }
 
-	  // console.log(textResultArray);
-	  // console.log(hashtag);
+	  console.log(textResultArray);
+	  console.log(hashtag);
 	  // console.log(result);
-	  var result = {result: textResultArray, hashtag: hashtag};
 	  // !!!!! then pass result to web page somehow !!!!!
 	});
 }
+
 grabTweets();
 
 /*------------------------------------*/
 
 app.get("/", function(req, res) {
-  	res.render("pages/index");
+  	res.render("pages/index", {
+  		results: textResultArray,
+  		hashtag: hashtag
+  	});
 });
 
 
