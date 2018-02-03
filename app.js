@@ -16,11 +16,9 @@ var T = new Twit({
   timeout_ms: 60 * 1000 // optional HTTP request timeout to apply to all requests.
 });
 
-T.get("search/tweets", { q: "#banana ", count: 4 }, function(
-  err,
-  data,
-  response
-) {
+var query = { q: "#banana ", count: 4 };
+
+T.get("search/tweets", query, function(err, data, response) {
   // console.log(data.statuses[0].text);
   console.log(data);
 });
