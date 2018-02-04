@@ -67,8 +67,16 @@ for(var i = 0; i < hashtagArray.length; i++){
   grabTweets(i);
 }
 
-app.get("/", function (req, res) {
-  res.render("pages/index", {
+app.get('/', function(req, res){
+  res.render("index")
+});
+
+app.get('/about', function(req, res){
+  res.render("about")
+});
+
+app.get("/gamescreen", function (req, res) {
+  res.render("gamescreen", {
     results: resultObjectArray
   });
 });

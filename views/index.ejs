@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Guess That Hashtag</title>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,11 +15,7 @@
       background-color: blue;
       background: linear-gradient(to bottom right, blue, rgb(205, 71, 231));
     }
-    img{
-      width:100px;
-      height:100px;
-      float:left;
-    }
+   
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -41,11 +38,12 @@
 
     }
 
+
     .title{
       display: flex;
       justify-content: center;
       align-items: center;
-      height:50vh;
+      height:100vh;
       width:100%;
       flex-wrap: wrap;
     }
@@ -68,14 +66,6 @@
       background-color: rgb(64, 174, 238);
     }
 
-    .about-us{
-        text-align:center;
-        color: #FFF;
-        font-size: 16px;
-        margin: 250px 20px;
-        margin-top:-100px;
-    }
-
     footer {
       width: 100%;
       
@@ -94,9 +84,14 @@
       text-decoration: none;
     }
 
+    #playButton {
+      color: white;
+    }
+
   </style>
 </head>
 <body>
+  
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -111,26 +106,27 @@
       
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class ="nav navbar-nav navbar-right">
-          <li class="active"><a href="E:\Downloads\Bootstrap-Website-Starter-Files\Bootstrap Website Starter Files\index.html">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Play</a></li>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/gamescreen">Play</a></li>
         </ul>
       </div>
 
       </div>
    </nav> 
+
 <div class="title">
    <div class="titletext animated zoomInDown" >
-      ABOUT 
+      GUESS 
   </div>
   <div class="titletext animated zoomInDown">
-      US 
+      THAT 
   </div>
+  <div class="titletext animated zoomInDown" >
+      HASHTAG
+  </div>
+  <button type="button" class="btn btn-primary btn-lg"><a id="playButton" href="/gamescreeen">Play now!</a></button>
 </div>
-
-<p class="about-us">
-        We out here at this Hackathon making a beautifully engineerred game based upon guessing a hashtag. 
-</p>
 
 <footer class="container-fluid text-center">
   <div class="row">

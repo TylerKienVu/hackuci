@@ -155,7 +155,7 @@ button {
   }
 }
 .webflow-style-input {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -164,6 +164,8 @@ button {
   border-radius: 2px;
   padding: 1.4rem 2rem 1.6rem;
   background: rgba(57, 63, 84, 0.1);
+  left: 30%;
+  top: 80%;
 }
 .webflow-style-input:after {
   content: "";

@@ -12,13 +12,13 @@ function check() {
     if (currentRound == roundNumberLimit){
         return;
     }
-    var hashtagSelector = "#tweetData ul:nth-child(" + currentRound + ") li:first-child";
+    var hashtagSelector = "#tweetData div:nth-child(" + currentRound + ") h2:first-child";
     var currentHashtag = $(hashtagSelector).text().trim();
     var nameValue = document.querySelector("#answerBox").value.toLowerCase();
 
     if (nameValue == currentHashtag) {
-        currentPoints += 10;
-        updatePoints();        
+        // currentPoints += 10;
+        // updatePoints();        
         alert("Correct!");
         toggleTweet(currentRound);
         currentRound++;
@@ -32,21 +32,21 @@ function check() {
         }
     }
     else {
-        currentPoints -= 5;
-        updatePoints();
+        // currentPoints -= 5;
+        // updatePoints();
         alert("Wrong!");
         $("#answerBox").val("");
     }
 }
 
 function toggleTweet(childNumberPosition) {
-    var selector = "#tweetData ul:nth-child(" + childNumberPosition + ")";
+    var selector = "#tweetData div:nth-child(" + childNumberPosition + ")";
     $(selector).toggle();
 }
 
 function toggleAllTweets(roundNumberLimit) {
     for(var i = 1; i <= roundNumberLimit; i++){
-        var selector = "#tweetData ul:nth-child(" + i + ")";
+        var selector = "#tweetData div:nth-child(" + i + ")";
         $(selector).toggle();
     }
 }
