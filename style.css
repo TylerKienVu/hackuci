@@ -1,0 +1,54 @@
+
+.tweet {
+    color: rgb(218, 230, 230);
+    position: relative;
+    background: #8972bb;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0;
+    padding: 1%;
+    margin-top: -9px;
+    margin-bottom: 15px; 
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+    transition: transform 3s;
+}
+
+.title {
+  color: rgb(218, 230, 230);
+  float: center;
+  font-style: italic bold;
+  font-size: 270%;
+  letter-spacing: 5px;
+  margin-top: -4%;
+  margin-left: 27%;
+  -webkit-text-stroke: 1px #617ab1;
+
+}
+
+#hint {
+  position: relative;
+  margin-left: 15%;
+  background: #7872bb; 
+  border: solid #7872bb 1px;
+  width: 8%;
+  height: 8%;
+  color: rgb(218, 214, 214);
+}
+
+
+#main {
+    position: relative;
+    float: center;
+    width: 85%;
+    height: 85%;
+    padding-top: 10px;
+    margin-left: 6%;
+    margin-bottom: -5%;
+    background: rgba(208, 206, 206, 0.85);
+    box-shadow: 5px -1px 10px #6e668d;
+}
+
+
+body {
+    background: linear-gradient(to bottom right, #63a3ec, #7282bb, #9569bd);
+}
