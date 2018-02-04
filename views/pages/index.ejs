@@ -4,29 +4,26 @@
 <head>
 	<% include ../partials/head %>
 </head>
-
 <body>
 	<header>
 		<% include ../partials/header %>
 	</header>
 
 	<main>
-		<div>
-			<h2>This is the main content</h2>
+		<h2>Game Screen</h2>
+		<h3 id="totalPoints">Total Points: 0</h3>
+		<div id="tweetData">
+			<% results.forEach(function(result) { %>
 			<ul>
-				<% results.forEach(function(result) { %>
-					<li>
-						<strong>
-							<%= result %>
-						</strong>
-					</li>
-					<% }); %>
+				<li hidden class="hashtag"> <%- result.hashtag %> </li>
+				<% result.resultArray.forEach(function(tweet) { %>
+					<li class="tweet"> <%- tweet %> </li>
+				<% }) %>
 			</ul>
-			
-			<form onsubmit="check()">
-			</form>
-
+			<% }) %>
 		</div>
+		<input type="text" id="answerBox" name="answer" />
+		<button onclick="check()">Submit</button>
 	</main>
 
 	<footer>

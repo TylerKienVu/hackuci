@@ -30,13 +30,13 @@ var hashtagArray = [
   { q: "#orange", count: 100 },
 ];
 
-var textResultArray = [];
-var hashtag = "";
+var resultObjectArray = [];
 
-function grabTweets() {
-  var randomInt = getRandomInt(0, hashtagArray.length - 1);
-  hashtag = hashtagArray[randomInt].q;
-  T.get("search/tweets", hashtagArray[randomInt], function (
+function grabTweets(index) {
+  // var randomInt = getRandomInt(0, hashtagArray.length - 1);
+  var hashtag = hashtagArray[index].q;
+  var arrayToPush = []
+  T.get("search/tweets", hashtagArray[index], function (
     err,
     data,
     response
@@ -44,31 +44,32 @@ function grabTweets() {
     var tweetArray = data.statuses;
 
     //loops until either it finds 4 valid results or reaches end of the tweet array
-    for (i = 0; textResultArray.length != 4 && i < tweetArray.length; i++) {
+    for (var i = 0; arrayToPush.length != 4 && i < tweetArray.length; i++) {
       // console.log("Tweet[" + i + "] : " + tweetArray[i].text);
-      if (tweetArray[i].text.search(hashtag) != -1) {
-        textResultArray.push(
+      if (tweetArray[i].text.search(hashtag) != -1 && tweetArray[i].lang == "en") {
+        arrayToPush.push(
           tweetArray[i].text.replace(hashtag, "#GUESS-THE-HASHTAG")
         );
       }
     }
 
-    if (textResultArray.length != 4) {
+    if (arrayToPush.length != 4) {
       console.log("Didn't get 4 valid results..");
+      return;
     }
-
-    var result = { result: textResultArray, hashtag: hashtag };
-    console.log(result);
+    var resultObject = { resultArray: arrayToPush, hashtag: hashtag };
+    resultObjectArray.push(resultObject);
     // !!!!! then pass result to web page somehow !!!!!
   });
 }
 
-grabTweets();
+for(var i = 0; i < hashtagArray.length; i++){
+  grabTweets(i);
+}
 
 app.get("/", function (req, res) {
   res.render("pages/index", {
-    results: textResultArray,
-    hashtag: hashtag
+    results: resultObjectArray
   });
 });
 
