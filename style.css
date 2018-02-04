@@ -1,54 +1,210 @@
-
 .tweet {
-    color: rgb(218, 230, 230);
-    position: relative;
-    background: #8972bb;
-    font-style: italic;
-    text-align: center;
-    letter-spacing: 0;
-    padding: 1%;
-    margin-top: -9px;
-    margin-bottom: 15px; 
-    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
-    transition: transform 3s;
+  color: rgb(218, 230, 230);
+  background: rgba(135, 115, 190, 0.7);
+  font-style: italic;
+  font-family: "Open Sans Condensed", sans-serif;
+  text-align: center;
+  font-size: 200%;
+  letter-spacing: 2px;
+  padding: 1%;
+  margin-top: -9px;
+  margin-bottom: 15px;
+  -webkit-transition: width 2s, height 2s, background-color 2s,
+    -webkit-transform 2s;
+  transition: transform 3s;
 }
 
 .title {
-  color: rgb(218, 230, 230);
+  font-family: "Raleway", sans-serif;
+  text-shadow: 2px 2px 5px #555555;
+  color: white;
   float: center;
-  font-style: italic bold;
-  font-size: 270%;
+  font-size: 300%;
   letter-spacing: 5px;
-  margin-top: -4%;
-  margin-left: 27%;
-  -webkit-text-stroke: 1px #617ab1;
-
+  margin-top: 70px;
+  margin-left: 31%;
+  z-index: -1;
 }
-
-#hint {
-  position: relative;
-  margin-left: 15%;
-  background: #7872bb; 
-  border: solid #7872bb 1px;
-  width: 8%;
-  height: 8%;
-  color: rgb(218, 214, 214);
-}
-
 
 #main {
-    position: relative;
-    float: center;
-    width: 85%;
-    height: 85%;
-    padding-top: 10px;
-    margin-left: 6%;
-    margin-bottom: -5%;
-    background: rgba(208, 206, 206, 0.85);
-    box-shadow: 5px -1px 10px #6e668d;
+  position: relative;
+  width: 85%;
+  height: 85%;
+  padding-top: 10px;
+  margin-left: 6%;
+  margin-bottom: -5%;
+  background-color: rgba(208, 206, 206, 0.85);
+  background-image: url("https://www.shareicon.net/download/2015/09/10/98928_twitter_512x512.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 5px -1px 10px #6e668d;
 }
 
+.button {
+  background-color: #7872bb;
+  border-radius: 6px;
+  position: absolute;
+  font-family: "Raleway", sans-serif;
+  color: rgb(218, 214, 214);
+  padding: 10px 10px;
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 24px;
+  transition-duration: 0.7s;
+}
+
+.home {
+  position: absolute;
+  top: 4;
+  left: 1%;
+  height: 80px;
+  width: 80px;
+  z-index: 1;
+}
+
+.buttoncontainer {
+  width: 85%;
+}
+
+.play {
+  position: absolute;
+  bottom: 22%;
+  left: 10px;
+}
+
+.submit {
+  position: absolute;
+  right: 10px;
+  bottom: 22%;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
 
 body {
-    background: linear-gradient(to bottom right, #63a3ec, #7282bb, #9569bd);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: linear-gradient(to bottom right, #63a3ec, #7282bb, #9569bd);
+}
+
+/* for text input */
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+input {
+  border-style: none;
+  background: transparent;
+  outline: none;
+}
+button {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+.demo-flex-spacer {
+  flex-grow: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  z-index: 10;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.webflow-style-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.1);
+}
+.webflow-style-input:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: linear-gradient(
+    to right,
+    #b294ff,
+    #57e6e6,
+    #d69eec,
+    #57e6e6,
+    #b294ff,
+    #57e6e6
+  );
+  background-size: 500% auto;
+  animation: gradient 3s linear infinite;
+}
+.webflow-style-input input {
+  flex-grow: 1;
+  color: #bfd2ff;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+}
+.webflow-style-input input::-webkit-input-placeholder {
+  color: #7881a1;
+}
+.webflow-style-input button {
+  color: #7881a1;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  transition: color 0.25s;
+}
+.webflow-style-input button:hover {
+  color: #bfd2ff;
 }
