@@ -1,6 +1,53 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: linear-gradient( white, rgb(29, 202, 255));
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+input:focus,button:focus {
+  outline: none;
+}
+
+.alert-correct {
+  background-color: green ;
+  color: white;
+}
+
+.alert-wrong {
+  background-color: red;
+  color: white;
+}
+
+.notVisible {
+  display: none;
+}
+
+.noOpacity {
+  opacity: 0;
+}
+
+.customButton {
+  border: none;
+  outline: none;
+  background: rgba(29, 202, 255, 1);
+  border-radius: 6px;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  width: 70px;
+  height: 50px;
+  font-size: 24px;
+  margin-top: 5em;
+}
+
 .tweet {
-  color: rgb(218, 230, 230);
-  background: rgba(135, 115, 190, 0.7);
+  color: white;
+  background: rgba(29, 202, 255, 0.95);
   font-style: italic;
   font-family: "Open Sans Condensed", sans-serif;
   text-align: center;
@@ -14,199 +61,153 @@
   transition: transform 3s;
 }
 
-.title {
-  font-family: "Raleway", sans-serif;
-  text-shadow: 2px 2px 5px #555555;
-  color: white;
-  float: center;
-  font-size: 300%;
-  letter-spacing: 5px;
-  margin-top: 70px;
-  margin-left: 31%;
-  z-index: -1;
-}
-
-#main {
-  position: relative;
-  width: 85%;
-  height: 85%;
-  padding-top: 10px;
-  margin-left: 6%;
-  margin-bottom: -5%;
-  background-color: rgba(208, 206, 206, 0.85);
-  background-image: url("https://www.shareicon.net/download/2015/09/10/98928_twitter_512x512.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  box-shadow: 5px -1px 10px #6e668d;
-}
-
-.button {
-  background-color: #7872bb;
-  border-radius: 6px;
-  position: absolute;
-  font-family: "Raleway", sans-serif;
-  color: rgb(218, 214, 214);
-  padding: 10px 10px;
-  width: 120px;
-  height: 50px;
-  text-align: center;
-  text-decoration: bold;
-  display: inline-block;
-  font-size: 24px;
-  transition-duration: 0.7s;
-}
-
-.home {
-  position: absolute;
-  top: 4;
-  left: 1%;
-  height: 80px;
-  width: 80px;
-  z-index: 1;
-}
-
-.buttoncontainer {
-  width: 85%;
-}
-
-.play {
-  position: absolute;
-  bottom: 22%;
-  left: 10px;
-}
-
-.submit {
-  position: absolute;
-  right: 10px;
-  bottom: 22%;
-}
-
-.button:hover {
+.customButton:hover {
   opacity: 0.8;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: linear-gradient(to bottom right, #63a3ec, #7282bb, #9569bd);
+.bannerDropdown {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  border-radius: 0px;
+  display: none;
 }
 
-/* for text input */
-html {
-  box-sizing: border-box;
-  font-size: 10px;
+.roundContainer {
+  display: none;
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+
+#answerBox {
+  font-family: "Raleway", sans-serif;
+  width: 20vw;
+  height: 7vh;
+  font-size: 2em;
+  margin-top: 2em;
+  opacity: 0.95;
+  background: rgba(255,255,255,0.95);
+  color: black;
+  border:2px solid rgb(29,202,255);
+  border-radius: 6px;
+  text-align: center;
 }
-body,
-ul,
-li {
-  margin: 0;
-  padding: 0;
+
+#answerBox::placeholder {
+  color: black;
+  opacity: 1;
 }
-li {
-  list-style: none;
+
+#homeIcon {
+  margin-right: 1em;
+  margin-top: 1em;
+  width: 5vw;
+  height: auto;
+  float: right;
+  z-index: 1;
+  color: rgb(29, 202, 255)
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-}
-a {
-  text-decoration: none;
-}
-input {
-  border-style: none;
-  background: transparent;
-  outline: none;
-}
-button {
-  padding: 0;
-  background: none;
-  border: none;
-  outline: none;
-}
-.demo-flex-spacer {
-  flex-grow: 1;
-}
-.container {
-  display: flex;
-  flex-direction: column;
+
+#main {
+  font-size: 10px;  
+  width: 85%;
   height: 85%;
-  max-width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-  z-index: 10;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -5%;
+  background-color: white;
+  background-image: url("https://www.shareicon.net/download/2015/09/10/98928_twitter_512x512.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* box-shadow: 5px -1px 10px #6e668d; */
 }
-@keyframes gradient {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+
+#footerTitle {
+  font-family: "Raleway", sans-serif;
+  /* text-shadow: 2px 2px 5px #555555; */
+  color: white;
+  font-size: 200%;
+  z-index: -1;
+  margin-top: 0.5em;
 }
-.webflow-style-input {
+
+#totalPoints {
+  font-family: "Raleway", sans-serif;
+  /* text-shadow: 2px 2px 5px #555555; */
+  color: white;
+  z-index: -1;
+  margin-top: 0.5em;
+}
+
+#footerContainer {
+  width: 85%;
+  margin-top: 10vh;
+  text-align: center;
+}
+
+#tweetData {
+  height: 50vh;
+}
+
+#pointScreen {
+  position: relative;
+  top: 10vh;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(29, 202, 255, 0.95);
+  color: white;
+  text-align: center;
+  border-radius: 1em;
+  display: none;
+}
+
+#gameOverText {
+  font-family: "Raleway", sans-serif;
+  text-shadow: 2px 2px 5px #555555;
+  padding: 1em;
+}
+
+#gameMenu {
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  border-radius: 2px;
-  padding: 1.4rem 2rem 1.6rem;
-  background: rgba(57, 63, 84, 0.1);
-  left: 30%;
-  top: 80%;
+  width: 85%;
 }
-.webflow-style-input:after {
-  content: "";
+
+#answerBoxContainer {
+  text-align: center;
+}
+
+#hintContainer {
+  font-family: "Raleway", sans-serif;
+  padding-top: 2em;
+  font-size: 1.5em;
+}
+
+#hintContainer p{
+  margin: 0;
+}
+
+#positivePoints {
+  color: green;
+  z-index: 2;
   position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 999;
-  height: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  background-position: 0% 0%;
-  background: linear-gradient(
-    to right,
-    #b294ff,
-    #57e6e6,
-    #d69eec,
-    #57e6e6,
-    #b294ff,
-    #57e6e6
-  );
-  background-size: 500% auto;
-  animation: gradient 3s linear infinite;
+  top: 15px;
+  display: none;
 }
-.webflow-style-input input {
-  flex-grow: 1;
-  color: #bfd2ff;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  vertical-align: middle;
+
+#negativePoints {
+  color: red;
+  z-index: 2;
+  position: absolute;
+  top: 15px;
+  display: none;
 }
-.webflow-style-input input::-webkit-input-placeholder {
-  color: #7881a1;
-}
-.webflow-style-input button {
-  color: #7881a1;
-  font-size: 2.4rem;
-  line-height: 2.4rem;
-  vertical-align: middle;
-  transition: color 0.25s;
-}
-.webflow-style-input button:hover {
-  color: #bfd2ff;
+
+#pointAnimation {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  z-index: 1;
+  top: 1px;
+  left: 13em;
 }

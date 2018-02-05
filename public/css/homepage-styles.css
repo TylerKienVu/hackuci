@@ -1,0 +1,112 @@
+
+/*CSS for index.ejs and about.ejs*/
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.notVisible {
+    display: none;
+}
+
+.bg-white {
+    background-color: black;
+}
+
+.nav-item {
+    text-align: right;
+}
+
+li.active a{
+    color: rgb(29, 202, 255) !important;
+}
+
+.nav-link {
+    color: rgb(179, 175, 175) !important;
+    font-weight: bold;
+}
+
+.block-text {
+    color: white;
+    overflow-wrap: break-word;
+    padding: 2em;
+    text-align: left;
+}
+
+#titleContainer{
+    height:100vh;
+    width:100%;
+    text-align: center;
+}
+
+#titleText{
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 4em;
+    padding-bottom: 2em;
+}
+
+#aboutTitleText{
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 1em;
+}
+
+#brand{
+    padding: 5px;
+}
+
+#playButton{
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    height:60px;
+    color: #FFF;
+    background-color:  rgb(29, 202, 255);
+    border: none;
+    font-weight: bold;
+}
+
+#twitterIcon {
+    font-size: 2em;
+    color: rgb(29, 202, 255);
+}
+
+#twitterIcon:hover{
+    color: #D5D5D5;
+    text-decoration: none;
+}
+
+#playButtonLink {
+    color: white;
+}
+
+#playButtonLink:hover {
+    text-decoration: none;
+}
+
+#homeScreenIndex {
+    background: linear-gradient( rgb(29, 202, 255), white);
+}
+
+#homeScreenAbout {
+    background: rgb(29, 202, 255);
+
+}
+
+#homeLink {
+    color: #FFF;
+    background-color: rgb(64, 174, 238);   
+}
+
+#groupIMG {
+    max-height: 80vh;
+    width: auto;
+    margin-top: 3em;
+}
+

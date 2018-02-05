@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <script src="scripts/homepage-scripts.js"></script>
+    <link rel="stylesheet" href="css/homepage-styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+        <a id="brand" class="navbar-brand" href="#"><i id="twitterIcon" class="fab fa-twitter"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/gamescreen">Play</a>
+                </li>        
+            </ul>
+        </div>
+    </nav>
+    <div id="homeScreenAbout">
+      <div id="titleContainer">
+        <div id="aboutContentContainer" class="container-fluid">
+          <div class="row justify-content-sm-center">
+            <div class="col-sm-6">
+                <img id="groupIMG" class="animated slideInLeft notVisible" 
+                src="https://scontent-lax3-1.xx.fbcdn.net/v/t34.0-12/27661620_1958737127778664_1832649424_n.jpg?oh=8c16552d935f89438ef505992c0764fa&oe=5A787717">
+            </div>
+            <div class="col-sm-6">
+              <div id="aboutTitleText" class="animated zoomInDown" >
+                ABOUT US
+              </div>
+              <p id="aboutText" class="block-text animated slideInRight notVisible">
+                &emsp;&emsp;On February 2-4 of 2018, participants from all over California came
+                together to hack at University of California - Irvine's 'HackUCI'.
+                Students from California State University of Fullerton,
+                University of California San Diego, Univesity of California - Riverside,
+                and University of Calilfornia - Irvine,
+                all came to experience this wonderful event.&emsp;
+                <br>
+                <br>
+                &emsp;&emsp;Juleanne Palad, Gevork Gabrielyan, Tyler Vu, Andrew Gomez, and Deone Peng (left to right),
+                joined together to create a web application called
+                'Guess that Hashtag'. The game is similar to 'Four Pics One Word', where the user
+                figures out one word all the pictures have in common. In 'Guess that Hashtag',
+                the user must figure out what hashtag all the tweets have in common. Gevork & Tyler constructed the back-end of the website by utilizing Node.js and the Twitter API while Andrew, Deone, & Juleanne
+                designed the game's front-end using HTML & CSS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
