@@ -1,18 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-white">
-    <a id="brand" class="navbar-brand" href="#"><i id="twitterIcon" class="fab fa-twitter"></i></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
+    <a id="brand" class="navbar-brand" href="#">
+        <i id="twitterIcon" class="fab fa-twitter"></i>
+        <i id="hashtagIcon" class="fas fa-hashtag"></i>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i id="hamburgerMenu" class="fas fa-bars"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <ul class="navbar-nav ml-auto mr-3">
+            <li id="homeLink" class="nav-item">
+                <a class="nav-link" href="/">Home</span></a>
             </li>
-            <li class="nav-item">
+            <li id="aboutLink" class="nav-item">
                 <a class="nav-link" href="/about">About</a>
             </li>
-            <li class="nav-item">
+            <li id="gamescreenLink" class="nav-item">
                 <a class="nav-link" href="/gamescreen">Play</a>
             </li>        
         </ul>

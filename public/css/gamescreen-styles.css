@@ -2,16 +2,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: linear-gradient( white, rgb(29, 202, 255));
+  /* background: linear-gradient( white, rgb(29, 202, 255)); */
+  background-color: rgb(29, 202, 255);
   margin: 0;
   padding: 0;
   overflow-y: hidden;
-  overflow-x: hidden;
-  height: 100vh;
+  /* overflow-x: hidden; */
+  /* height: 100vh; */
+  /* overflow: auto; */
 }
 
 input:focus,button:focus {
   outline: none;
+}
+
+.nav-item {
+  text-align: right;
+}
+
+.navbar {
+  width: 100vw;
+}
+
+li.active a{
+  color: rgb(29, 202, 255) !important;
+}
+
+.nav-link {
+  color: rgb(179, 175, 175) !important;
+  font-weight: bold;
 }
 
 .alert-correct {
@@ -39,19 +58,18 @@ input:focus,button:focus {
   border-radius: 6px;
   font-family: "Raleway", sans-serif;
   color: white;
-  width: 70px;
-  height: 50px;
-  font-size: 24px;
-  margin-top: 5em;
+  width: 100%;
+  height: 6vh;
+  font-size: 3vh;
 }
 
 .tweet {
   color: white;
   background: rgba(29, 202, 255, 0.95);
-  font-style: italic;
+  font-weight: bold;
   font-family: "Open Sans Condensed", sans-serif;
   text-align: center;
-  font-size: 200%;
+  font-size: 2.5vh;
   letter-spacing: 2px;
   padding: 1%;
   margin-top: -9px;
@@ -80,10 +98,9 @@ input:focus,button:focus {
 
 #answerBox {
   font-family: "Raleway", sans-serif;
-  width: 20vw;
+  width: 50vw;
   height: 7vh;
-  font-size: 2em;
-  margin-top: 2em;
+  font-size: 2vh;
   opacity: 0.95;
   background: rgba(255,255,255,0.95);
   color: black;
@@ -95,6 +112,7 @@ input:focus,button:focus {
 #answerBox::placeholder {
   color: black;
   opacity: 1;
+  font-size: 2vh;
 }
 
 #homeIcon {
@@ -110,43 +128,40 @@ input:focus,button:focus {
 #main {
   font-size: 10px;  
   width: 85%;
-  height: 85%;
+  height: 80vh;
+  border-top: 10px solid rgb(29, 202, 255);
   padding-top: 10px;
+  margin-top: 10vh;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: -5%;
+  margin-bottom: -4vh;
   background-color: white;
-  background-image: url("https://www.shareicon.net/download/2015/09/10/98928_twitter_512x512.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  /* box-shadow: 5px -1px 10px #6e668d; */
 }
 
 #footerTitle {
   font-family: "Raleway", sans-serif;
-  /* text-shadow: 2px 2px 5px #555555; */
   color: white;
-  font-size: 200%;
+  font-size: 3vh;
   z-index: -1;
-  margin-top: 0.5em;
 }
 
 #totalPoints {
   font-family: "Raleway", sans-serif;
-  /* text-shadow: 2px 2px 5px #555555; */
   color: white;
   z-index: -1;
-  margin-top: 0.5em;
+  margin: 0;
+  font-size: 3vh;
+  float: left;
 }
 
 #footerContainer {
   width: 85%;
-  margin-top: 10vh;
+  margin-top: 5vh;
   text-align: center;
 }
 
 #tweetData {
-  height: 50vh;
+  height: 48vh;
 }
 
 #pointScreen {
@@ -174,40 +189,76 @@ input:focus,button:focus {
 }
 
 #answerBoxContainer {
+  width: 80vw;
+  height: 40%;
   text-align: center;
 }
 
 #hintContainer {
   font-family: "Raleway", sans-serif;
   padding-top: 2em;
-  font-size: 1.5em;
-}
-
-#hintContainer p{
-  margin: 0;
+  font-size: 1em;
+  height: 10vh;
 }
 
 #positivePoints {
   color: green;
   z-index: 2;
   position: absolute;
-  top: 15px;
+  /* right: 50px;
+  top: 10px; */
   display: none;
+  font-size: 3vh;
 }
 
 #negativePoints {
   color: red;
   z-index: 2;
   position: absolute;
-  top: 15px;
   display: none;
+  font-size: 3vh;
 }
 
 #pointAnimation {
-  position: absolute;
-  height: 50px;
-  width: 100px;
+  float: left;
   z-index: 1;
-  top: 1px;
-  left: 13em;
+}
+
+#twitterIcon {
+  font-size: 2em;
+  color: rgb(29, 202, 255);
+}
+
+#twitterIcon:hover{
+  color: #D5D5D5;
+  text-decoration: none;
+}
+
+#hamburgerMenu {
+  color: rgb(29, 202, 255);
+}
+
+#hashtagIcon {
+  position: absolute;
+  font-size: 1em;
+  color: gray;
+  left: 42px;
+  top: 30px;
+  z-index: 2;
+}
+
+#hintContainer p {
+  background-color: rgba(29, 202, 255, 0.95);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-bottom: 0.5em;
+  font-size: 1.5vh;
+}
+
+@media screen and (min-width: 768px) {
+  .tweet {
+    font-size: 3vh
+  }
 }

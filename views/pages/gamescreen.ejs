@@ -7,11 +7,12 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Raleway:800" rel="stylesheet">
     </head>
     <body>
+        <% include ../partials/navbar %>
         <div id="correct" class="alert alert-correct bannerDropdown animated">Correct!</div>
         <div id="wrong" class="alert alert-wrong bannerDropdown animated">Wrong!</div>
-        <a id="homeLink" href="/">
+        <!-- <a id="homeLink" href="/">
             <i id="homeIcon" class="animated rubberBand fas fa-home"></i>
-        </a>  
+        </a>   -->
         <div id="main">        
             <br>
             <div id="tweetData">
@@ -29,28 +30,34 @@
             </div>
             
             <div id="gameMenu" class="container-fluid notVisible">
-                <div class="row justify-content-sm-center">
-                    <button id="hint" class="customButton animated bounceIn col-sm-3"> HINT </button>
-                    <div id="answerBoxContainer" class="col-sm-5">
+                <div id="answerBoxRow" class="row justify-content-sm-center">
+                    <div id="answerBoxContainer" class="col-12">
                         <input id="answerBox" class="animated fadeInDown" type="text" placeholder="What's the hashtag?">
                         <div id="hintContainer">
                         </div>
                     </div>
-                    <button id="submit" class="customButton animated bounceIn col-sm-3" onclick="check()">SUBMIT</button>
+                </div>
+                <div id="buttonsContainer" class="row justify-content-sm-center">
+                    <div class="gameMenuButtonContainer col-6">
+                        <button id="submit" class="customButton animated bounceIn" onclick="check()">SUBMIT</button>
+                    </div>
+                    <div class="gameMenuButtonContainer col-6">
+                        <button id="hint" class="customButton animated bounceIn"> HINT </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="footerContainer" class="container-fluid">
-            <div class="row justify-content-sm-center">
-                <div id="pointContainer" class="col-sm-4">
-                    <h3 id="totalPoints">Points: 0</h3> 
-                    <div id="pointAnimation">
-                        <h3 id="positivePoints" class="animated fadeOutRight">+5</h3>
-                        <h3 id="negativePoints" class="animated fadeOutRight">-3</h3> 
+            <div class="row justify-content-center">
+                <div id="pointContainer" class="col-12">
+                    <div id="totalPointsTextContainer">
+                        <h3 id="totalPoints">Points: 0</h3>
                     </div>
+                    <div id="pointAnimation">
+                            <h3 id="positivePoints" class="animated fadeOutRight">+5</h3>
+                            <h3 id="negativePoints" class="animated fadeOutRight">-3</h3> 
+                    </div> 
                 </div>
-                <h1 id="footerTitle" class="col-sm-4"> GUESS THAT HASHTAG! </h1>
-                <div class="col-sm-4"></div>
             </div>
         </div>
     </body>

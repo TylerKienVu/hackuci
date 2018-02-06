@@ -7,6 +7,7 @@ var animatingPoints = false;
 
 $( document ).ready(function() {
     roundNumberLimit = document.getElementById("tweetData").childElementCount;
+    $("#gamescreenLink").toggleClass("active");
 
     setTimeout(function() {
         $("#gameMenu").toggleClass("notVisible");

@@ -9,12 +9,12 @@ body {
     display: none;
 }
 
-.bg-white {
-    background-color: black;
-}
-
 .nav-item {
     text-align: right;
+}
+
+.navbar {
+    width: 100vw;
 }
 
 li.active a{
@@ -96,17 +96,30 @@ li.active a{
 
 #homeScreenAbout {
     background: rgb(29, 202, 255);
-
-}
-
-#homeLink {
-    color: #FFF;
-    background-color: rgb(64, 174, 238);   
+    margin-top: 5vh;
+    overflow: auto;
 }
 
 #groupIMG {
-    max-height: 80vh;
-    width: auto;
+    max-width: 70vw;;
+    height: auto;
     margin-top: 3em;
 }
 
+#hamburgerMenu {
+    color: rgb(29, 202, 255);
+}
+
+#hashtagIcon {
+    position: absolute;
+    font-size: 1em;
+    color: gray;
+    left: 42px;
+    top: 30px;
+    z-index: 2;
+}
+
+#aboutContentContainer {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
